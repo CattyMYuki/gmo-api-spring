@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gmo-api-spring
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: gmo-api-spring
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5 
+  template:
+    metadata:
+      labels:
+        app: gmo-api-spring
+    spec:
+      nodeSelector:
+        "beta.kubernetes.io/os": linux
+      containers:
+      - name: gmo-api-spring
+        image: acrCatm0001.azurecr.io/gmo-api-spring:v1
+        ports:
+        - containerPort: 8090
+        resources:
+          requests:
+            cpu: 250m
+          limits:
+            cpu: 500m
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gmo-api-spring
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 8090
+  selector:
+    app: gmo-api-spring

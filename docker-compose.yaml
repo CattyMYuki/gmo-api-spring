@@ -1,0 +1,8 @@
+version: '3'
+services:
+  gmo-api-spring:
+    build: .
+    image: acrcatm0001.azurecr.io/gmo-api-spring:v1
+    container_name: gmo-api-spring
+    ports:
+        - "8090:8090"
