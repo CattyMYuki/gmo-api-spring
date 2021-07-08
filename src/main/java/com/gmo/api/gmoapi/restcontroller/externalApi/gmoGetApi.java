@@ -27,8 +27,8 @@ public class gmoGetApi {
 
         //Parse JSON format
         JsonObject json = gson.fromJson(response.body().string(), JsonObject.class);
-//        String result = response.body().string();
-        return json.toString();
+        String result = json.get("data").getAsJsonArray().get(0).getAsJsonObject().get("ask").toString();
+        return result;
     }
 
 }
