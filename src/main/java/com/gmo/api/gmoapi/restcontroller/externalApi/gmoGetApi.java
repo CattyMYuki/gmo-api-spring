@@ -1,6 +1,6 @@
 package com.gmo.api.gmoapi.restcontroller.externalApi;
 
-import com.google.gson.Gson;
+//import com.google.gson.Gson;
 import okhttp3.*;
 import java.util.*;
 
@@ -9,7 +9,7 @@ public class gmoGetApi {
     private HttpUrl.Builder urlBuilder = HttpUrl.parse(url).newBuilder();
 
     public String getTicker(String alt_coin) throws Exception {
-        Gson gson = new Gson();
+//        Gson gson = new Gson();
 
         // Add request Param
         Map<String, String> params = new HashMap<>();
