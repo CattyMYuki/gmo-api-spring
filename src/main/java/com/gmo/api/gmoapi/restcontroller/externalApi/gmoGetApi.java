@@ -2,8 +2,6 @@ package com.gmo.api.gmoapi.restcontroller.externalApi;
 
 import com.google.gson.Gson;
 import okhttp3.*;
-import java.io.IOException;
-import java.net.http.HttpClient;
 import java.util.*;
 
 public class gmoGetApi {
