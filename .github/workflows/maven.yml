@@ -36,5 +36,5 @@ jobs:
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
     - run: |
-            docker build . -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/gmo-api-spring:${cat ./version.txt}
-            docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/gmo-api-spring:${cat ./version.txt}
+            docker build . -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/gmo-api-spring:latest
+            docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/gmo-api-spring:latest
