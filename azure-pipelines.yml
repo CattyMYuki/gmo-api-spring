@@ -20,4 +20,9 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
-
+- task: AzureCLI@1
+  inputs:
+   azureSubscription: 'yuki_personal_ms'
+   scriptLocation: 'inlineScript'
+   inlineScript: |
+    az acr login --name acrcatm0001
