@@ -11,10 +11,6 @@ public class restApiComponent {
 	 public String hello(){
 		 return "hello";
 	 } 
-	@GetMapping("/")
-    Mono bntest_mono(){
-
-	}
 	@GetMapping("/ticker")
 	 public String ticker(@RequestParam("alt_coin") String alt_coin) throws Exception {
 		gmoGetApi gmoGetApi = new gmoGetApi();
