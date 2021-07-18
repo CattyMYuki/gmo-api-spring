@@ -20,11 +20,12 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
-- task: AzureCLI@1
+- task: AzureCLI@2
   inputs:
-   azureSubscription: 'yuki_personal_ms'
-   scriptLocation: 'inlineScript'
-   inlineScript: |
-    az acr login --name acrcatm0001
-    docker build -f ./Dockerfile -t acrcatm0001.azurecr.io/gmo-api-spring:$(cat ./version.txt) --no-cashe .
-    docker push acrcatm0001.azurecr.io/gmo-api-spring:$(cat ./version.txt)
+    azureSubscription: 'yuki_personal_ms(cebbe902-1da7-4cec-8beb-bd96c5d7dc68)'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      az acr login --name acrcatm0001
+      docker build -f ./Dockerfile -t acrcatm0001.azurecr.io/gmo-api-spring:$(cat ./version.txt) --no-cashe .
+      docker push acrcatm0001.azurecr.io/gmo-api-spring:$(cat ./version.txt)
