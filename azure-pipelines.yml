@@ -28,4 +28,3 @@ steps:
     inlineScript: |
       az acr login --name acrcatm0001
       docker build -t acrcatm0001.azurecr.io/gmo-api-spring:latest ./
-      docker push acrcatm0001.azurecr.io/gmo-api-spring:latest
