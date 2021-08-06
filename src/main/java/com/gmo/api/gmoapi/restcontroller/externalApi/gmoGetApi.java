@@ -1,8 +1,6 @@
 package com.gmo.api.gmoapi.restcontroller.externalApi;
-
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
-
 import okhttp3.*;
 import java.util.*;
 
@@ -12,7 +10,6 @@ public class gmoGetApi {
 
     public String getTicker(String alt_coin) throws Exception {
         Gson gson = new Gson();
-
         // Add request Param
         Map<String, String> params = new HashMap<>();
         params.put("symbol", alt_coin);
@@ -30,5 +27,4 @@ public class gmoGetApi {
         String result = json.get("data").getAsJsonArray().get(0).getAsJsonObject().get("ask").toString();
         return result;
     }
-
 }
