@@ -21,7 +21,7 @@ spec:
         "beta.kubernetes.io/os": linux
       containers:
       - name: gmo-api-spring
-        image: acrcatm0001.azurecr.io/gmo-api-spring:latest
+        image: acrcatm0001.azurecr.io/gmo-api-spring:0.0.1-SNAPSHOT
         ports:
         - containerPort: 8090
         resources:
