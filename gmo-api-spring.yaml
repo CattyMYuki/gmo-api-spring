@@ -34,11 +34,11 @@ apiVersion: v1
 kind: Service
 metadata:
   name: gmo-api-spring
-  annotations:
-    service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+#  annotations:
+#    service.beta.kubernetes.io/azure-load-balancer-internal: "true"
 spec:
   type: LoadBalancer
-  loadBalancerIP: 10.240.10.25
+#  loadBalancerIP: 10.240.0.25
   ports:
   - port: 80
     targetPort: 8090
