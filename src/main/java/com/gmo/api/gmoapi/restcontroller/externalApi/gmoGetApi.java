@@ -1,9 +1,12 @@
 package com.gmo.api.gmoapi.restcontroller.externalApi;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import org.springframework.stereotype.Component;
+
 import okhttp3.*;
 import java.util.*;
 
+@Component
 public class gmoGetApi {
     private String url = "https://api.coin.z.com/public/v1/ticker";
     private HttpUrl.Builder urlBuilder = HttpUrl.parse(url).newBuilder();
